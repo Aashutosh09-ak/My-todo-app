@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A simple task list that saves tasks locally in your browser.">
+  <title>Task List — To-do app</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="top">
+      <p class="eyebrow">PERSONAL ORGANIZER</p>
+      <h1>My Task List<span>.</span></h1>
+      <p class="subtitle">Small steps, done one at a time.</p>
+    </header>
+
+    <section class="task-panel" aria-labelledby="tasks-heading">
+      <form id="task-form" class="task-form">
+        <label class="sr-only" for="task-input">New task</label>
+        <input id="task-input" name="task" type="text" placeholder="What needs to be done?" maxlength="180" autocomplete="off">
+        <button type="submit" class="add-button">Add task <span aria-hidden="true">+</span></button>
+      </form>
+      <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+
+      <div class="list-heading">
+        <h2 id="tasks-heading">Your tasks</h2>
+        <span id="task-count" class="count">0 tasks</span>
+      </div>
+      <ul id="task-list" class="task-list" aria-label="Task list"></ul>
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon" aria-hidden="true">✓</div>
+        <p>Your list is clear.</p>
+        <span>Add a task above to get started.</span>
+      </div>
+      <footer class="panel-footer">
+        <span><span class="save-dot" aria-hidden="true"></span> Saved on this device</span>
+        <button type="button" id="clear-completed" class="text-button">Clear completed</button>
+      </footer>
+    </section>
+    <p class="privacy-note">Tasks are stored in this browser only. No account needed.</p>
+  </main>
+</body>
+</html>
